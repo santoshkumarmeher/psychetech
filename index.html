@@ -5,93 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PsycheTech | Student Mental Health Support</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <header>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Your Mental Health Matters</h1>
+                <p>PsycheTech provides confidential, AI-powered mental health support for students, with seamless escalation to professional counselors when needed.</p>
+                <a href="chat.html" class="btn">Start Chatting Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
         <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-brain"></i>
-                    <span>PsycheTech</span>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI-Powered Support</h3>
+                    <p>Our intelligent chatbot provides immediate, confidential support 24/7, using evidence-based techniques.</p>
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="#"><i class="fas fa-robot"></i> Chat Support</a></li>
-                        <li><a href="#"><i class="fas fa-chart-bar"></i> Dashboard</a></li>
-                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
-                    </ul>
-                </nav>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Risk Assessment</h3>
+                    <p>Advanced algorithms detect signs of distress and escalate to human counselors when necessary.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Professional Handoff</h3>
+                    <p>Seamless connection to licensed counselors for personalized support when you need it most.</p>
+                </div>
             </div>
-        </div>
-    </header>
 
-    <div class="container">
-        <div class="main-content">
-            <div class="chat-container">
-                <div class="chat-header">
-                    <h2><i class="fas fa-robot"></i> PsycheBot - Mental Health Assistant</h2>
-                    <div class="status">Online <i class="fas fa-circle" style="color: #4cc9f0; font-size: 0.8rem;"></i></div>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Privacy First</h3>
+                    <p>Your conversations are encrypted and anonymized to protect your privacy.</p>
                 </div>
-                
-                <div class="chat-messages" id="chatMessages">
-                    <div class="message bot-message">
-                        <strong>PsycheBot:</strong> Hello! I'm here to support you. How are you feeling today?
-                    </div>
-                    <div class="message user-message">
-                        <strong>You:</strong> I'm feeling a bit stressed with my exams coming up.
-                    </div>
-                    <div class="message bot-message">
-                        <strong>PsycheBot:</strong> I understand. Exam periods can be challenging. Remember to take breaks and practice self-care.
-                    </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access support from any device, anywhere, at any time.</p>
                 </div>
-                
-                <div class="chat-input">
-                    <input type="text" id="messageInput" placeholder="Type your message here...">
-                    <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
-                </div>
-            </div>
-            
-            <div class="dashboard">
-                <h2><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h2>
-                
-                <div class="metric-card">
-                    <div class="metric-label">High-Risk Escalations</div>
-                    <div class="metric-value" id="riskCount">3</div>
-                    <div class="metric-label">Last 24 Hours</div>
-                </div>
-                
-                <div class="metric-card">
-                    <div class="metric-label">Active Conversations</div>
-                    <div class="metric-value" style="color: var(--primary);">12</div>
-                    <div class="metric-label">Currently in progress</div>
-                </div>
-                
-                <div class="metric-card">
-                    <div class="metric-label">Counsellor Bookings</div>
-                    <div class="metric-value" style="color: var(--success);">5</div>
-                    <div class="metric-label">Today</div>
-                </div>
-                
-                <h3 style="margin-top: 20px;">Try these example messages:</h3>
-                <div class="suggested-messages">
-                    <div class="suggestion" data-message="I'm feeling overwhelmed with my coursework.">Overwhelmed</div>
-                    <div class="suggestion" data-message="I can't sleep because of anxiety.">Anxiety</div>
-                    <div class="suggestion" data-message="I feel really sad and lonely lately.">Sadness</div>
-                    <div class="suggestion" data-message="I'm having panic attacks before exams.">Panic attacks</div>
+                <div class="feature-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Student Focused</h3>
+                    <p>Designed specifically for the unique challenges faced by students.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <footer>
-        <div class="container">
-            <p>PsycheTech MVP Prototype | Confidential Student Mental Health Support System</p>
-            <p>This is a demonstration prototype only. In a real emergency, please contact emergency services.</p>
-        </div>
-    </footer>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
 
-    <script src="./script.js"></script>
+    <script>
+        // Load header and footer
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // Set active nav link
+                document.getElementById('nav-home').classList.add('active');
+            });
+
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

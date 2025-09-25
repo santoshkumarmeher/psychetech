@@ -1,14 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Support | PsycheTech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="container">
+            <h1 class="page-title"><i class="fas fa-robot"></i> Chat Support</h1>
+            
+            <div class="main-content">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h2><i class="fas fa-robot"></i> PsycheBot - Mental Health Assistant</h2>
+                        <div class="status">Online <i class="fas fa-circle" style="color: #4cc9f0; font-size: 0.8rem;"></i></div>
+                    </div>
+                    
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message bot-message">
+                            <strong>PsycheBot:</strong> Hello! I'm here to support you. How are you feeling today?
+                        </div>
+                        <div class="message user-message">
+                            <strong>You:</strong> I'm feeling a bit stressed with my exams coming up.
+                        </div>
+                        <div class="message bot-message">
+                            <strong>PsycheBot:</strong> I understand. Exam periods can be challenging. Remember to take breaks and practice self-care.
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input">
+                        <input type="text" id="messageInput" placeholder="Type your message here...">
+                        <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+                
+                <div class="dashboard">
+                    <h2><i class="fas fa-tachometer-alt"></i> Quick Stats</h2>
+                    
+                    <div class="metric-card">
+                        <div class="metric-label">Your Risk Level</div>
+                        <div class="metric-value" id="userRiskLevel">Low</div>
+                        <div class="metric-label">Based on recent conversation</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-label">Chat Duration</div>
+                        <div class="metric-value" style="color: var(--primary);" id="chatTime">5:32</div>
+                        <div class="metric-label">Minutes</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-label">Resources Sent</div>
+                        <div class="metric-value" style="color: var(--success);">3</div>
+                        <div class="metric-label">Helpful materials</div>
+                    </div>
+                    
+                    <h3 style="margin-top: 20px;">Try these example messages:</h3>
+                    <div class="suggested-messages">
+                        <div class="suggestion" data-message="I'm feeling overwhelmed with my coursework.">Overwhelmed</div>
+                        <div class="suggestion" data-message="I can't sleep because of anxiety.">Anxiety</div>
+                        <div class="suggestion" data-message="I feel really sad and lonely lately.">Sadness</div>
+                        <div class="suggestion" data-message="I'm having panic attacks before exams.">Panic attacks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load header and footer
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // Set active nav link
+                document.getElementById('nav-chat').classList.add('active');
+            });
+
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // Chat functionality
         document.addEventListener('DOMContentLoaded', function() {
             const chatMessages = document.getElementById('chatMessages');
             const messageInput = document.getElementById('messageInput');
             const sendButton = document.getElementById('sendButton');
-            const riskCount = document.getElementById('riskCount');
+            const userRiskLevel = document.getElementById('userRiskLevel');
+            const chatTime = document.getElementById('chatTime');
             
             // High-risk trigger phrases
             const highRiskPhrases = [
                 'overwhelmed', 'anxiety', 'panic', 'can\'t sleep', 'sad', 'lonely', 
                 'hopeless', 'stress', 'depressed', 'suicidal', 'hurt myself'
             ];
+            
+            // Chat timer
+            let seconds = 0;
+            let minutes = 5;
+            setInterval(() => {
+                seconds++;
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                }
+                chatTime.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+            }, 1000);
             
             // Send message function
             function sendMessage() {
@@ -23,13 +131,20 @@
                     message.toLowerCase().includes(phrase.toLowerCase())
                 );
                 
+                // Update user risk level
+                if (isHighRisk) {
+                    userRiskLevel.textContent = 'High';
+                    userRiskLevel.style.color = 'var(--danger)';
+                } else if (userRiskLevel.textContent === 'Low' && message.length > 50) {
+                    userRiskLevel.textContent = 'Medium';
+                    userRiskLevel.style.color = 'var(--warning)';
+                }
+                
                 // Simulate bot response after a short delay
                 setTimeout(() => {
                     if (isHighRisk) {
                         // High-risk response
                         addHighRiskResponse(message);
-                        // Increment risk count in dashboard
-                        riskCount.textContent = parseInt(riskCount.textContent) + 1;
                     } else {
                         // Normal response
                         addNormalResponse(message);
@@ -139,3 +254,6 @@
                 sendMessage();
             }, 3000);
         });
+    </script>
+</body>
+</html>
