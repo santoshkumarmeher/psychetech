@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Assessment - PsycheTech</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/assessment.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>PsycheTech</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="chat.html" class="nav-link">Chat Support</a>
+                <a href="assessment.html" class="nav-link active">Assessment</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </div>
+            <div class="nav-user">
+                <span class="user-name">Hello, Student</span>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Assessment Container -->
+    <div class="assessment-container">
+        <div class="assessment-header">
+            <div class="header-content">
+                <h1>Mental Health Assessment</h1>
+                <p>Take a validated assessment to understand your current mental wellbeing</p>
+                <div class="assessment-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">Question 1 of 9</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-main">
+            <!-- Assessment Selection -->
+            <div class="assessment-selection" id="assessmentSelection">
+                <h2>Choose an Assessment</h2>
+                <div class="assessment-cards">
+                    <div class="assessment-card" data-type="phq9">
+                        <div class="card-header">
+                            <i class="fas fa-clipboard-list"></i>
+                            <h3>PHQ-9</h3>
+                            <span class="card-badge">Depression</span>
+                        </div>
+                        <p>Patient Health Questionnaire - 9 items assessing depression symptoms over the last 2 weeks.</p>
+                        <div class="card-details">
+                            <span><i class="fas fa-clock"></i> 5 minutes</span>
+                            <span><i class="fas fa-question"></i> 9 questions</span>
+                        </div>
+                        <button class="btn-primary btn-full start-assessment">Start Assessment</button>
+                    </div>
+
+                    <div class="assessment-card" data-type="gad7">
+                        <div class="card-header">
+                            <i class="fas fa-wind"></i>
+                            <h3>GAD-7</h3>
+                            <span class="card-badge">Anxiety</span>
+                        </div>
+                        <p>Generalized Anxiety Disorder - 7 items assessing anxiety symptoms over the last 2 weeks.</p>
+                        <div class="card-details">
+                            <span><i class="fas fa-clock"></i> 3 minutes</span>
+                            <span><i class="fas fa-question"></i> 7 questions</span>
+                        </div>
+                        <button class="btn-primary btn-full start-assessment">Start Assessment</button>
+                    </div>
+
+                    <div class="assessment-card" data-type="ghq">
+                        <div class="card-header">
+                            <i class="fas fa-heartbeat"></i>
+                            <h3>GHQ-12</h3>
+                            <span class="card-badge">General Health</span>
+                        </div>
+                        <p>General Health Questionnaire - 12 items assessing general psychological wellbeing.</p>
+                        <div class="card-details">
+                            <span><i class="fas fa-clock"></i> 4 minutes</span>
+                            <span><i class="fas fa-question"></i> 12 questions</span>
+                        </div>
+                        <button class="btn-primary btn-full start-assessment">Start Assessment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assessment Questions -->
+            <div class="assessment-questions" id="assessmentQuestions" style="display: none;">
+                <div class="question-container">
+                    <div class="question-header">
+                        <h3 id="questionTitle">Assessment Questions</h3>
+                        <div class="question-counter">
+                            <span id="currentQuestion">1</span>/<span id="totalQuestions">9</span>
+                        </div>
+                    </div>
+
+                    <div class="question-content">
+                        <p class="question-instruction" id="questionInstruction">
+                            Over the last 2 weeks, how often have you been bothered by the following problems?
+                        </p>
+                        <h4 class="question-text" id="questionText"></h4>
+
+                        <div class="options-container" id="optionsContainer">
+                            <!-- Options will be populated by JavaScript -->
+                        </div>
+
+                        <div class="question-navigation">
+                            <button class="btn-outline" id="prevQuestion" disabled>
+                                <i class="fas fa-arrow-left"></i>
+                                Previous
+                            </button>
+                            <button class="btn-primary" id="nextQuestion">
+                                Next
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button class="btn-secondary" id="submitAssessment" style="display: none;">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Assessment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assessment Results -->
+            <div class="assessment-results" id="assessmentResults" style="display: none;">
+                <div class="results-container">
+                    <div class="results-header">
+                        <div class="results-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h2>Assessment Results</h2>
+                        <p>Based on your responses, here's your assessment summary</p>
+                    </div>
+
+                    <div class="results-content">
+                        <div class="score-card">
+                            <div class="score-header">
+                                <h3 id="assessmentType">PHQ-9 Assessment</h3>
+                                <span class="score-value" id="totalScore">0</span>
+                            </div>
+                            <div class="score-gauge">
+                                <div class="gauge-background">
+                                    <div class="gauge-fill" id="resultGauge"></div>
+                                </div>
+                                <div class="gauge-labels">
+                                    <span>Minimal</span>
+                                    <span>Mild</span>
+                                    <span>Moderate</span>
+                                    <span>Severe</span>
+                                </div>
+                            </div>
+                            <div class="score-interpretation" id="scoreInterpretation">
+                                <!-- Interpretation will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="recommendations">
+                            <h4>Recommendations</h4>
+                            <div class="recommendation-cards" id="recommendationCards">
+                                <!-- Recommendations will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="results-actions">
+                            <button class="btn-primary" id="saveResults">
+                                <i class="fas fa-download"></i>
+                                Save Results
+                            </button>
+                            <button class="btn-outline" id="newAssessment">
+                                <i class="fas fa-redo"></i>
+                                Take Another Assessment
+                            </button>
+                            <a href="chat.html" class="btn-secondary">
+                                <i class="fas fa-comments"></i>
+                                Chat with Support
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assessment Info Modal -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>About This Assessment</h3>
+                <button class="btn-close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="modalContent">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/assessment.js"></script>
+</body>
+</html>

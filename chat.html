@@ -3,257 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Support | PsycheTech</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <title>Chat Support - PsycheTech</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/chat.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <div id="header-placeholder"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>PsycheTech</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="chat.html" class="nav-link active">Chat Support</a>
+                <a href="assessment.html" class="nav-link">Assessment</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </div>
+            <div class="nav-user">
+                <span class="user-name">Hello, Student</span>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <main>
-        <div class="container">
-            <h1 class="page-title"><i class="fas fa-robot"></i> Chat Support</h1>
-            
-            <div class="main-content">
-                <div class="chat-container">
-                    <div class="chat-header">
-                        <h2><i class="fas fa-robot"></i> PsycheBot - Mental Health Assistant</h2>
-                        <div class="status">Online <i class="fas fa-circle" style="color: #4cc9f0; font-size: 0.8rem;"></i></div>
+    <!-- Chat Container -->
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <div class="chat-sidebar">
+            <div class="sidebar-header">
+                <h3>Chat Sessions</h3>
+                <button class="btn-new-chat">
+                    <i class="fas fa-plus"></i>
+                    New Chat
+                </button>
+            </div>
+            <div class="chat-history">
+                <div class="history-item active">
+                    <i class="fas fa-comment"></i>
+                    <span>Current Session</span>
+                    <span class="time">Now</span>
+                </div>
+                <div class="history-item">
+                    <i class="fas fa-comment"></i>
+                    <span>Yesterday's Chat</span>
+                    <span class="time">Yesterday</span>
+                </div>
+                <div class="history-item">
+                    <i class="fas fa-comment"></i>
+                    <span>Weekly Check-in</span>
+                    <span class="time">3 days ago</span>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <div class="emergency-card">
+                    <i class="fas fa-life-ring"></i>
+                    <div>
+                        <strong>Emergency Support</strong>
+                        <span>Available 24/7</span>
                     </div>
-                    
-                    <div class="chat-messages" id="chatMessages">
-                        <div class="message bot-message">
-                            <strong>PsycheBot:</strong> Hello! I'm here to support you. How are you feeling today?
-                        </div>
-                        <div class="message user-message">
-                            <strong>You:</strong> I'm feeling a bit stressed with my exams coming up.
-                        </div>
-                        <div class="message bot-message">
-                            <strong>PsycheBot:</strong> I understand. Exam periods can be challenging. Remember to take breaks and practice self-care.
-                        </div>
+                    <button class="btn-sos">SOS</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+            <div class="chat-header">
+                <div class="chat-info">
+                    <div class="ai-avatar">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    
-                    <div class="chat-input">
-                        <input type="text" id="messageInput" placeholder="Type your message here...">
-                        <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+                    <div>
+                        <h3>PsycheTech AI Assistant</h3>
+                        <span class="status online">Online</span>
                     </div>
                 </div>
-                
-                <div class="dashboard">
-                    <h2><i class="fas fa-tachometer-alt"></i> Quick Stats</h2>
-                    
-                    <div class="metric-card">
-                        <div class="metric-label">Your Risk Level</div>
-                        <div class="metric-value" id="userRiskLevel">Low</div>
-                        <div class="metric-label">Based on recent conversation</div>
+                <div class="chat-actions">
+                    <button class="btn-action" title="Risk Assessment">
+                        <i class="fas fa-chart-bar"></i>
+                    </button>
+                    <button class="btn-action" title="Export Chat">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="btn-action" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be inserted here by JavaScript -->
+            </div>
+
+            <div class="chat-input-container">
+                <div class="quick-actions">
+                    <button class="quick-btn" data-message="I'm feeling anxious today">
+                        <i class="fas fa-wind"></i>
+                        Anxiety
+                    </button>
+                    <button class="quick-btn" data-message="I'm having trouble sleeping">
+                        <i class="fas fa-bed"></i>
+                        Sleep
+                    </button>
+                    <button class="quick-btn" data-message="I'm feeling overwhelmed with studies">
+                        <i class="fas fa-books"></i>
+                        Studies
+                    </button>
+                    <button class="quick-btn" data-message="I need someone to talk to">
+                        <i class="fas fa-comments"></i>
+                        Talk
+                    </button>
+                </div>
+                <div class="input-group">
+                    <div class="input-actions">
+                        <button class="input-btn" title="Attach File">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="input-btn" title="Emoji">
+                            <i class="fas fa-smile"></i>
+                        </button>
                     </div>
-                    
-                    <div class="metric-card">
-                        <div class="metric-label">Chat Duration</div>
-                        <div class="metric-value" style="color: var(--primary);" id="chatTime">5:32</div>
-                        <div class="metric-label">Minutes</div>
+                    <input type="text" id="messageInput" placeholder="Type your message here..." maxlength="500">
+                    <button class="btn-send" id="sendMessage">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="char-count">0/500</span>
+                    <span class="privacy-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        Your conversations are private and secure
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Panel -->
+        <div class="risk-panel" id="riskPanel">
+            <div class="risk-header">
+                <h4>Risk Assessment</h4>
+                <button class="btn-close-risk">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="risk-content">
+                <div class="risk-gauge">
+                    <div class="gauge-container">
+                        <div class="gauge" id="riskGauge">
+                            <div class="gauge-fill" id="gaugeFill"></div>
+                        </div>
+                        <div class="gauge-labels">
+                            <span>Low</span>
+                            <span>Medium</span>
+                            <span>High</span>
+                        </div>
                     </div>
-                    
-                    <div class="metric-card">
-                        <div class="metric-label">Resources Sent</div>
-                        <div class="metric-value" style="color: var(--success);">3</div>
-                        <div class="metric-label">Helpful materials</div>
+                    <div class="risk-level" id="riskLevel">
+                        <span class="level-text">No Risk Detected</span>
+                        <span class="level-desc">Conversation appears normal</span>
                     </div>
-                    
-                    <h3 style="margin-top: 20px;">Try these example messages:</h3>
-                    <div class="suggested-messages">
-                        <div class="suggestion" data-message="I'm feeling overwhelmed with my coursework.">Overwhelmed</div>
-                        <div class="suggestion" data-message="I can't sleep because of anxiety.">Anxiety</div>
-                        <div class="suggestion" data-message="I feel really sad and lonely lately.">Sadness</div>
-                        <div class="suggestion" data-message="I'm having panic attacks before exams.">Panic attacks</div>
+                </div>
+                <div class="risk-triggers" id="riskTriggers">
+                    <!-- Risk triggers will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Handoff Modal -->
+    <div class="modal" id="handoffModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Support Options Available</h3>
+                <button class="btn-close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="handoff-options">
+                    <div class="option-card emergency">
+                        <i class="fas fa-life-ring"></i>
+                        <h4>Emergency Support</h4>
+                        <p>Immediate connection to crisis services</p>
+                        <div class="emergency-contacts">
+                            <p>📞 National Suicide Prevention: <strong>1-800-273-8255</strong></p>
+                            <p>💬 Crisis Text Line: <strong>Text HOME to 741741</strong></p>
+                        </div>
+                        <button class="btn-call">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </button>
+                    </div>
+                    <div class="option-card booking">
+                        <i class="fas fa-calendar-check"></i>
+                        <h4>Book Session</h4>
+                        <p>Schedule with a professional counselor</p>
+                        <div class="booking-info">
+                            <p>Next available: <strong>Today 3:00 PM</strong></p>
+                            <p>Session length: <strong>50 minutes</strong></p>
+                        </div>
+                        <a href="booking.html" class="btn-book">
+                            <i class="fas fa-calendar-plus"></i>
+                            Book Now
+                        </a>
+                    </div>
+                    <div class="option-card peer">
+                        <i class="fas fa-users"></i>
+                        <h4>Peer Support</h4>
+                        <p>Connect with trained student volunteers</p>
+                        <div class="peer-info">
+                            <p>Available: <strong>24/7 Chat</strong></p>
+                            <p>Response time: <strong>< 5 minutes</strong></p>
+                        </div>
+                        <button class="btn-peer">
+                            <i class="fas fa-comments"></i>
+                            Connect Now
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-    <script>
-        // Load header and footer
-        fetch('components/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                // Set active nav link
-                document.getElementById('nav-chat').classList.add('active');
-            });
-
-        fetch('components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-
-        // Chat functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const chatMessages = document.getElementById('chatMessages');
-            const messageInput = document.getElementById('messageInput');
-            const sendButton = document.getElementById('sendButton');
-            const userRiskLevel = document.getElementById('userRiskLevel');
-            const chatTime = document.getElementById('chatTime');
-            
-            // High-risk trigger phrases
-            const highRiskPhrases = [
-                'overwhelmed', 'anxiety', 'panic', 'can\'t sleep', 'sad', 'lonely', 
-                'hopeless', 'stress', 'depressed', 'suicidal', 'hurt myself'
-            ];
-            
-            // Chat timer
-            let seconds = 0;
-            let minutes = 5;
-            setInterval(() => {
-                seconds++;
-                if (seconds === 60) {
-                    seconds = 0;
-                    minutes++;
-                }
-                chatTime.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-            }, 1000);
-            
-            // Send message function
-            function sendMessage() {
-                const message = messageInput.value.trim();
-                if (message === '') return;
-                
-                // Add user message to chat
-                addMessage(message, 'user');
-                
-                // Check if message contains high-risk phrases
-                const isHighRisk = highRiskPhrases.some(phrase => 
-                    message.toLowerCase().includes(phrase.toLowerCase())
-                );
-                
-                // Update user risk level
-                if (isHighRisk) {
-                    userRiskLevel.textContent = 'High';
-                    userRiskLevel.style.color = 'var(--danger)';
-                } else if (userRiskLevel.textContent === 'Low' && message.length > 50) {
-                    userRiskLevel.textContent = 'Medium';
-                    userRiskLevel.style.color = 'var(--warning)';
-                }
-                
-                // Simulate bot response after a short delay
-                setTimeout(() => {
-                    if (isHighRisk) {
-                        // High-risk response
-                        addHighRiskResponse(message);
-                    } else {
-                        // Normal response
-                        addNormalResponse(message);
-                    }
-                }, 1000);
-                
-                // Clear input
-                messageInput.value = '';
-            }
-            
-            // Add message to chat
-            function addMessage(text, sender) {
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('message');
-                messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
-                
-                const senderName = sender === 'user' ? 'You' : 'PsycheBot';
-                messageDiv.innerHTML = `<strong>${senderName}:</strong> ${text}`;
-                
-                chatMessages.appendChild(messageDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-            
-            // Add normal bot response
-            function addNormalResponse(userMessage) {
-                const responses = [
-                    "I understand. It's important to acknowledge these feelings.",
-                    "Thank you for sharing. How has this been affecting your daily life?",
-                    "I'm here to listen. Can you tell me more about what you're experiencing?",
-                    "It takes courage to talk about these things. Would you like to explore some coping strategies?",
-                    "I hear you. Remember that it's okay to not be okay sometimes."
-                ];
-                
-                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-                addMessage(randomResponse, 'bot');
-            }
-            
-            // Add high-risk bot response with visualization and handoff options
-            function addHighRiskResponse(userMessage) {
-                // Main response
-                addMessage("I'm concerned about what you're sharing. Your message has triggered our risk assessment system.", 'bot');
-                
-                // Risk indicator visualization
-                setTimeout(() => {
-                    const riskDiv = document.createElement('div');
-                    riskDiv.classList.add('message', 'bot-message');
-                    riskDiv.innerHTML = `
-                        <div class="risk-indicator risk-high">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <div>
-                                <strong>Risk Level: High</strong>
-                                <div class="risk-gauge">
-                                    <div class="gauge-fill" style="width: 85%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    chatMessages.appendChild(riskDiv);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }, 300);
-                
-                // Handoff options
-                setTimeout(() => {
-                    const handoffDiv = document.createElement('div');
-                    handoffDiv.classList.add('message', 'bot-message');
-                    handoffDiv.innerHTML = `
-                        <strong>PsycheBot:</strong> Your wellbeing is our priority. Here are immediate support options:
-                        <div class="handoff-options">
-                            <button class="sos-button">
-                                <i class="fas fa-phone-alt"></i> SOS Helpline: 1-800-273-8255
-                            </button>
-                            <button class="book-button" id="bookCounsellor">
-                                <i class="fas fa-calendar-check"></i> Book a Counsellor Session
-                            </button>
-                        </div>
-                    `;
-                    chatMessages.appendChild(handoffDiv);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                    
-                    // Add event listener to booking button
-                    document.getElementById('bookCounsellor').addEventListener('click', function() {
-                        alert('Redirecting to counsellor booking page... (This would connect to your booking system in a full implementation)');
-                    });
-                }, 600);
-            }
-            
-            // Event listeners
-            sendButton.addEventListener('click', sendMessage);
-            
-            messageInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    sendMessage();
-                }
-            });
-            
-            // Suggested messages
-            document.querySelectorAll('.suggestion').forEach(button => {
-                button.addEventListener('click', function() {
-                    messageInput.value = this.getAttribute('data-message');
-                    messageInput.focus();
-                });
-            });
-            
-            // Demo high-risk message after a delay to showcase functionality
-            setTimeout(() => {
-                messageInput.value = "I feel overwhelmed and can't sleep because of my exams.";
-                sendMessage();
-            }, 3000);
-        });
-    </script>
+    <script src="js/chat.js"></script>
 </body>
 </html>
