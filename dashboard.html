@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - PsycheTech</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>PsycheTech</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="chat.html" class="nav-link">Chat Support</a>
+                <a href="assessment.html" class="nav-link">Assessment</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+            </div>
+            <div class="nav-user">
+                <span class="user-name">Admin Panel</span>
+                <div class="user-avatar admin">
+                    <i class="fas fa-cog"></i>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="admin-info">
+                    <div class="admin-avatar">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div>
+                        <h4>Administrator</h4>
+                        <span class="admin-role">System Admin</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#analytics" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#users" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>User Management</span>
+                    <span class="nav-badge">1,247</span>
+                </a>
+                <a href="#risk" class="nav-item">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Risk Monitoring</span>
+                    <span class="nav-badge danger">12</span>
+                </a>
+                <a href="#sessions" class="nav-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Counselling Sessions</span>
+                    <span class="nav-badge">28</span>
+                </a>
+                <a href="#reports" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="#settings" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <h5>System Status</h5>
+                    <div class="status-item">
+                        <span>AI Chat</span>
+                        <span class="status online">Online</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Database</span>
+                        <span class="status online">Stable</span>
+                    </div>
+                    <div class="status-item">
+                        <span>API Services</span>
+                        <span class="status online">Running</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="section-header">
+                    <h2>System Overview</h2>
+                    <div class="header-actions">
+                        <div class="date-filter">
+                            <select id="timeRange">
+                                <option value="today">Today</option>
+                                <option value="week" selected>This Week</option>
+                                <option value="month">This Month</option>
+                                <option value="quarter">This Quarter</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary">
+                            <i class="fas fa-download"></i>
+                            Export Report
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Total Users</h3>
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="metric-value">1,247</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            12% increase
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Active Sessions</h3>
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="metric-value">43</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            8% increase
+                        </div>
+                    </div>
+
+                    <div class="metric-card danger">
+                        <div class="metric-header">
+                            <h3>High-Risk Cases</h3>
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="metric-value">12</div>
+                        <div class="metric-change negative">
+                            <i class="fas fa-arrow-up"></i>
+                            3 new today
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Scheduled Sessions</h3>
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="metric-value">28</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            5 new bookings
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h4>Risk Level Distribution</h4>
+                            <span>Last 7 Days</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="riskChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h4>User Engagement</h4>
+                            <span>Daily Active Users</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="engagementChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <div class="section-header">
+                        <h3>Recent High-Risk Escalations</h3>
+                        <a href="#risk" class="btn-outline view-all">View All</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item danger">
+                            <div class="activity-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h5>High-risk message detected</h5>
+                                <p>User expressed severe distress in chat session</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                            <div class="activity-actions">
+                                <button class="btn-action small">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="btn-action small">
+                                    <i class="fas fa-flag"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="activity-item warning">
+                            <div class="activity-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h5>Medium-risk assessment</h5>
+                                <p>PHQ-9 score indicates moderate depression</p>
+                                <span class="activity-time">4 hours ago</span>
+                            </div>
+                            <div class="activity-actions">
+                                <button class="btn-action small">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="activity-item danger">
+                            <div class="activity-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h5>SOS button activated</h5>
+                                <p>Emergency protocol initiated for user in crisis</p>
+                                <span class="activity-time">6 hours ago</span>
+                            </div>
+                            <div class="activity-actions">
+                                <button class="btn-action small">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Risk Monitoring Section -->
+            <section id="risk" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Risk Monitoring</h2>
+                    <div class="header-actions">
+                        <div class="filters">
+                            <select id="riskLevelFilter">
+                                <option value="all">All Risk Levels</option>
+                                <option value="high">High Risk Only</option>
+                                <option value="medium">Medium Risk</option>
+                                <option value="low">Low Risk</option>
+                            </select>
+                            <select id="timeFrameFilter">
+                                <option value="24h">Last 24 Hours</option>
+                                <option value="7d" selected>Last 7 Days</option>
+                                <option value="30d">Last 30 Days</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="risk-metrics">
+                    <div class="risk-stat">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">High-Risk Cases</div>
+                        <div class="stat-change negative">+3 today</div>
+                    </div>
+                    <div class="risk-stat">
+                        <div class="stat-value">45</div>
+                        <div class="stat-label">Medium-Risk Cases</div>
+                        <div class="stat-change">+8 today</div>
+                    </div>
+                    <div class="risk-stat">
+                        <div class="stat-value">89%</div>
+                        <div class="stat-label">Response Rate</div>
+                        <div class="stat-change positive">+5% improvement</div>
+                    </div>
+                </div>
+
+                <div class="risk-table-container">
+                    <table class="risk-table">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Risk Level</th>
+                                <th>Trigger</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="risk-high">
+                                <td>USR-8345</td>
+                                <td>
+                                    <span class="risk-badge high">High</span>
+                                </td>
+                                <td>Suicidal ideation in chat</td>
+                                <td>2 hours ago</td>
+                                <td>
+                                    <span class="status-badge pending">Pending Review</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-action small">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-action small">
+                                            <i class="fas fa-flag"></i>
+                                        </button>
+                                        <button class="btn-action small">
+                                            <i class="fas fa-user-md"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="risk-medium">
+                                <td>USR-9123</td>
+                                <td>
+                                    <span class="risk-badge medium">Medium</span>
+                                </td>
+                                <td>PHQ-9 score: 15</td>
+                                <td>4 hours ago</td>
+                                <td>
+                                    <span class="status-badge in-progress">Counselor Assigned</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-action small">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-action small">
+                                            <i class="fas fa-comment"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="risk-high">
+                                <td>USR-5678</td>
+                                <td>
+                                    <span class="risk-badge high">High</span>
+                                </td>
+                                <td>SOS button activated</td>
+                                <td>6 hours ago</td>
+                                <td>
+                                    <span class="status-badge resolved">Emergency Contact Made</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-action small">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-action small">
+                                            <i class="fas fa-file-medical"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- User Management Section -->
+            <section id="users" class="dashboard-section">
+                <div class="section-header">
+                    <h2>User Management</h2>
+                    <div class="header-actions">
+                        <button class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            Add User
+                        </button>
+                    </div>
+                </div>
+                <!-- User management content would go here -->
+            </section>
+        </div>
+    </div>
+
+    <!-- Risk Detail Modal -->
+    <div class="modal" id="riskDetailModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Risk Case Details</h3>
+                <button class="btn-close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="risk-detail-content">
+                    <!-- Risk details would be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

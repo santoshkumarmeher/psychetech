@@ -422,13 +422,26 @@ class PsycheTechAssessment {
 
 // Initialize assessment when page loads
 document.addEventListener('DOMContentLoaded', () => {
-    window.psycheTechAssessment = new PsycheTechAssessment();
-});
-
-// Close modal on clicking outside content
-document.addEventListener('click', (e) => {
-    const modal = document.getElementById('infoModal');
-    if (modal.classList.contains('show') && !modal.contains(e.target)) {
-        window.psycheTechAssessment.closeModal();
-    }
+    window.assessment = new PsycheTechAssessment();
+    
+    // Close modal when clicking outside
+    document.getElementById('infoModal').addEventListener('click', (e) => {
+        if (e.target.id === 'infoModal') {
+            window.assessment.closeModal();
+        }
+    });
+    
+    // Info buttons for each assessment
+    document.querySelectorAll('.assessment-card').forEach(card => {
+        const infoBtn = document.createElement('button');
+        infoBtn.className = 'btn-outline btn-small';
+        infoBtn.innerHTML = '<i class="fas fa-info-circle"></i> Info';
+        infoBtn.style.marginTop = '1rem';
+        infoBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.assessment.showInfoModal(card.dataset.type);
+        });
+        
+        card.querySelector('.card-details').appendChild(infoBtn);
+    });
 });

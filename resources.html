@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Resources - PsycheTech</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/resources.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>PsycheTech</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="chat.html" class="nav-link">Chat Support</a>
+                <a href="assessment.html" class="nav-link">Assessment</a>
+                <a href="resources.html" class="nav-link active">Resources</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </div>
+            <div class="nav-user">
+                <span class="user-name">Hello, Student</span>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resources Header -->
+    <div class="resources-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Mental Health Resources</h1>
+                <p>Tools, exercises, and support options for your wellness journey</p>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search resources..." id="resourceSearch">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <div class="banner-content">
+                <i class="fas fa-life-ring"></i>
+                <div class="banner-text">
+                    <h3>Emergency Support Available 24/7</h3>
+                    <p>If you're in crisis, immediate help is available</p>
+                </div>
+                <div class="banner-actions">
+                    <button class="btn-emergency">
+                        <i class="fas fa-phone"></i>
+                        Call Now: 1-800-273-8255
+                    </button>
+                    <button class="btn-textline">
+                        <i class="fas fa-sms"></i>
+                        Text HOME to 741741
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resources Navigation -->
+    <div class="resources-nav">
+        <div class="container">
+            <div class="nav-tabs">
+                <button class="tab-btn active" data-tab="exercises">Wellness Exercises</button>
+                <button class="tab-btn" data-tab="articles">Articles & Guides</button>
+                <button class="tab-btn" data-tab="tools">Interactive Tools</button>
+                <button class="tab-btn" data-tab="support">Support Services</button>
+                <button class="tab-btn" data-tab="challenges">Wellness Challenges</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resources Content -->
+    <div class="resources-content">
+        <div class="container">
+            <!-- Wellness Exercises Tab -->
+            <div class="tab-content active" id="exercises-tab">
+                <h2>Wellness Exercises</h2>
+                <div class="resources-grid">
+                    <div class="resource-card exercise-card">
+                        <div class="card-header">
+                            <i class="fas fa-wind"></i>
+                            <h3>Breathing Exercises</h3>
+                            <span class="card-duration">5-10 min</span>
+                        </div>
+                        <p>Simple breathing techniques to reduce anxiety and promote relaxation.</p>
+                        <div class="exercise-preview">
+                            <div class="breathing-circle">
+                                <div class="circle-inner">Breathe In</div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-primary start-exercise" data-exercise="breathing">
+                                <i class="fas fa-play"></i>
+                                Start Exercise
+                            </button>
+                            <button class="btn-outline">
+                                <i class="fas fa-info"></i>
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card exercise-card">
+                        <div class="card-header">
+                            <i class="fas fa-spa"></i>
+                            <h3>Mindfulness Meditation</h3>
+                            <span class="card-duration">10-15 min</span>
+                        </div>
+                        <p>Guided meditation sessions for present-moment awareness and stress reduction.</p>
+                        <div class="exercise-preview">
+                            <div class="meditation-timer">
+                                <i class="fas fa-clock"></i>
+                                <span>Guided Session</span>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-primary start-exercise" data-exercise="meditation">
+                                <i class="fas fa-play"></i>
+                                Start Meditation
+                            </button>
+                            <button class="btn-outline">
+                                <i class="fas fa-info"></i>
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="resource-card exercise-card">
+                        <div class="card-header">
+                            <i class="fas fa-pencil-alt"></i>
+                            <h3>Journaling Prompts</h3>
+                            <span class="card-duration">Flexible</span>
+                        </div>
+                        <p>Thought-provoking prompts to help process emotions and gain clarity.</p>
+                        <div class="exercise-preview">
+                            <div class="journal-prompt">
+                                "What am I grateful for today?"
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-primary start-exercise" data-exercise="journaling">
+                                <i class="fas fa-book-open"></i>
+                                Start Journaling
+                            </button>
+                            <button class="btn-outline">
+                                <i class="fas fa-info"></i>
+                                Prompt Library
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Articles & Guides Tab -->
+            <div class="tab-content" id="articles-tab">
+                <h2>Articles & Guides</h2>
+                <div class="articles-grid">
+                    <div class="article-card">
+                        <div class="article-image">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="article-content">
+                            <h3>Improving Sleep Quality</h3>
+                            <p>Practical strategies for better sleep hygiene and overcoming insomnia.</p>
+                            <div class="article-meta">
+                                <span class="read-time"><i class="fas fa-clock"></i> 8 min read</span>
+                                <span class="difficulty">Beginner</span>
+                            </div>
+                            <button class="btn-primary">
+                                <i class="fas fa-book-open"></i>
+                                Read Article
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <div class="article-image">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="article-content">
+                            <h3>Managing Academic Stress</h3>
+                            <p>Evidence-based techniques for handling exam pressure and study stress.</p>
+                            <div class="article-meta">
+                                <span class="read-time"><i class="fas fa-clock"></i> 12 min read</span>
+                                <span class="difficulty">Intermediate</span>
+                            </div>
+                            <button class="btn-primary">
+                                <i class="fas fa-book-open"></i>
+                                Read Article
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <div class="article-image">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="article-content">
+                            <h3>Building Support Networks</h3>
+                            <p>How to cultivate meaningful connections and social support systems.</p>
+                            <div class="article-meta">
+                                <span class="read-time"><i class="fas fa-clock"></i> 10 min read</span>
+                                <span class="difficulty">Beginner</span>
+                            </div>
+                            <button class="btn-primary">
+                                <i class="fas fa-book-open"></i>
+                                Read Article
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Tools Tab -->
+            <div class="tab-content" id="tools-tab">
+                <h2>Interactive Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Mood Tracker</h3>
+                        <p>Track your daily mood patterns and identify triggers and improvements.</p>
+                        <div class="tool-preview">
+                            <canvas id="moodChart" width="200" height="100"></canvas>
+                        </div>
+                        <button class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            Start Tracking
+                        </button>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Goal Setting</h3>
+                        <p>Set and track wellness goals with SMART framework and progress monitoring.</p>
+                        <div class="tool-preview">
+                            <div class="goal-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                                <span>65% Complete</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary">
+                            <i class="fas fa-bullseye"></i>
+                            Set Goals
+                        </button>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Self-Care Planner</h3>
+                        <p>Plan and schedule self-care activities for balanced wellbeing.</p>
+                        <div class="tool-preview">
+                            <div class="self-care-grid">
+                                <div class="care-activity active">💤</div>
+                                <div class="care-activity">🏃</div>
+                                <div class="care-activity">📚</div>
+                                <div class="care-activity">🎨</div>
+                            </div>
+                        </div>
+                        <button class="btn-primary">
+                            <i class="fas fa-calendar"></i>
+                            Plan Activities
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exercise Modal -->
+    <div class="modal" id="exerciseModal">
+        <div class="modal-content exercise-modal">
+            <div class="modal-header">
+                <h3 id="exerciseTitle">Breathing Exercise</h3>
+                <button class="btn-close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="exercise-container" id="exerciseContainer">
+                    <!-- Exercise content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/resources.js"></script>
+</body>
+</html>

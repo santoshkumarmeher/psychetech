@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Counselling Session - PsycheTech</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/booking.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>PsycheTech</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="chat.html" class="nav-link">Chat Support</a>
+                <a href="assessment.html" class="nav-link">Assessment</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </div>
+            <div class="nav-user">
+                <span class="user-name">Hello, Student</span>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Container -->
+    <div class="booking-container">
+        <div class="booking-header">
+            <div class="container">
+                <h1>Book a Counselling Session</h1>
+                <p>Connect with certified professionals who can provide personalized support</p>
+            </div>
+        </div>
+
+        <div class="booking-steps">
+            <div class="container">
+                <div class="steps-indicator">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span>Choose Specialist</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span>Select Time</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <span>Confirm Booking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-content">
+            <div class="container">
+                <!-- Step 1: Choose Specialist -->
+                <div class="booking-step active" id="step1">
+                    <h2>Select a Counsellor</h2>
+                    <p>Choose from our team of certified mental health professionals</p>
+
+                    <div class="specialists-grid">
+                        <div class="specialist-card" data-specialist="dr-smith">
+                            <div class="specialist-image">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="specialist-info">
+                                <h3>Dr. Sarah Smith</h3>
+                                <span class="specialty">Clinical Psychologist</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.7 (128 reviews)</span>
+                                </div>
+                                <p>Specializes in anxiety disorders and cognitive behavioral therapy. 10+ years experience.</p>
+                                <div class="specialist-features">
+                                    <span><i class="fas fa-clock"></i> 50-min sessions</span>
+                                    <span><i class="fas fa-video"></i> Video available</span>
+                                    <span><i class="fas fa-comments"></i> English, Spanish</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary select-specialist">
+                                Select Dr. Smith
+                            </button>
+                        </div>
+
+                        <div class="specialist-card" data-specialist="dr-johnson">
+                            <div class="specialist-image">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="specialist-info">
+                                <h3>Dr. Michael Johnson</h3>
+                                <span class="specialty">Counseling Psychologist</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0 (95 reviews)</span>
+                                </div>
+                                <p>Expert in student mental health and academic stress management. LGBTQ+ affirming.</p>
+                                <div class="specialist-features">
+                                    <span><i class="fas fa-clock"></i> 45-min sessions</span>
+                                    <span><i class="fas fa-video"></i> Video available</span>
+                                    <span><i class="fas fa-comments"></i> English, French</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary select-specialist">
+                                Select Dr. Johnson
+                            </button>
+                        </div>
+
+                        <div class="specialist-card" data-specialist="ms-garcia">
+                            <div class="specialist-image">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="specialist-info">
+                                <h3>Ms. Maria Garcia</h3>
+                                <span class="specialty">Licensed Clinical Social Worker</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9 (201 reviews)</span>
+                                </div>
+                                <p>Focuses on trauma-informed care and multicultural counseling. Crisis intervention specialist.</p>
+                                <div class="specialist-features">
+                                    <span><i class="fas fa-clock"></i> 60-min sessions</span>
+                                    <span><i class="fas fa-video"></i> Video available</span>
+                                    <span><i class="fas fa-comments"></i> English, Spanish</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary select-specialist">
+                                Select Ms. Garcia
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Select Time -->
+                <div class="booking-step" id="step2">
+                    <h2>Choose Session Time</h2>
+                    <p>Select an available time slot for your counselling session</p>
+
+                    <div class="time-selection">
+                        <div class="date-selector">
+                            <h3>Select Date</h3>
+                            <div class="date-grid" id="dateGrid">
+                                <!-- Dates will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="time-slots">
+                            <h3>Available Time Slots</h3>
+                            <div class="slots-grid" id="slotsGrid">
+                                <!-- Time slots will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-navigation">
+                        <button class="btn-outline" onclick="booking.previousStep()">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Specialists
+                        </button>
+                        <button class="btn-primary" id="confirmTime" disabled>
+                            Confirm Time
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Confirm Booking -->
+                <div class="booking-step" id="step3">
+                    <h2>Confirm Your Booking</h2>
+                    <p>Review your session details and complete the booking</p>
+
+                    <div class="booking-summary">
+                        <div class="summary-card">
+                            <h3>Session Details</h3>
+                            <div class="summary-item">
+                                <label>Counsellor:</label>
+                                <span id="summarySpecialist">Dr. Sarah Smith</span>
+                            </div>
+                            <div class="summary-item">
+                                <label>Date & Time:</label>
+                                <span id="summaryDateTime">Loading...</span>
+                            </div>
+                            <div class="summary-item">
+                                <label>Duration:</label>
+                                <span id="summaryDuration">50 minutes</span>
+                            </div>
+                            <div class="summary-item">
+                                <label>Session Type:</label>
+                                <span>Video Call</span>
+                            </div>
+                            <div class="summary-item">
+                                <label>Cost:</label>
+                                <span class="price">Free for Students</span>
+                            </div>
+                        </div>
+
+                        <div class="booking-notes">
+                            <h3>Important Notes</h3>
+                            <ul>
+                                <li>Your session will be conducted via secure video conference</li>
+                                <li>You'll receive a confirmation email with joining instructions</li>
+                                <li>Please be ready 5 minutes before your scheduled time</li>
+                                <li>Cancel or reschedule up to 24 hours in advance</li>
+                                <li>All sessions are confidential and secure</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step-navigation">
+                        <button class="btn-outline" onclick="booking.previousStep()">
+                            <i class="fas fa-arrow-left"></i>
+                            Change Time
+                        </button>
+                        <button class="btn-primary" id="completeBooking">
+                            <i class="fas fa-calendar-check"></i>
+                            Confirm Booking
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Booking Confirmed! 🎉</h3>
+                <button class="btn-close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>Your session has been booked successfully!</h4>
+                    <div class="booking-details">
+                        <p><strong>Counsellor:</strong> <span id="confirmSpecialist">Dr. Sarah Smith</span></p>
+                        <p><strong>Date & Time:</strong> <span id="confirmDateTime">Loading...</span></p>
+                        <p><strong>Session Type:</strong> Video Call</p>
+                    </div>
+                    <p>You'll receive a confirmation email with all the details and joining instructions.</p>
+                    <div class="success-actions">
+                        <button class="btn-primary" onclick="window.location.href='dashboard.html'">
+                            <i class="fas fa-calendar"></i>
+                            View My Sessions
+                        </button>
+                        <button class="btn-outline" onclick="window.location.href='resources.html'">
+                            <i class="fas fa-book"></i>
+                            Explore Resources
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/booking.js"></script>
+</body>
+</html>
