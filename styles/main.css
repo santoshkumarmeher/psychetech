@@ -178,6 +178,34 @@ body {
     text-align: center;
 }
 
+
+/* Ensure navigation is consistent across all pages */
+.nav-user {
+    display: none; /* Hide on mobile by default */
+}
+
+@media (min-width: 1024px) {
+    .nav-user {
+        display: flex; /* Show on desktop */
+    }
+}
+
+/* Mobile auth should be hidden on desktop */
+@media (min-width: 1024px) {
+    .mobile-auth {
+        display: none;
+    }
+}
+
+/* Active state for mobile menu links */
+.mobile-nav-links a.active {
+    background: rgba(67, 97, 238, 0.1);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+
+
 /* Buttons */
 .btn {
     padding: 10px 20px;
@@ -210,7 +238,11 @@ body {
 
 .btn-secondary {
     background: var(--secondary);
+    text-decoration: none;
     color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--secondary);
 }
 
 .btn-secondary:hover {
